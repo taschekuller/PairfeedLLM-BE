@@ -1,0 +1,15 @@
+services:
+  backend:
+    build: .
+    container_name: "container name"
+    restart: always #optional
+    environment:
+      DATABASE_URL: "db url"
+    ports:
+      - "5001:5001"
+    networks:
+      - "network"
+
+networks:
+  pairfeedllm-network:
+    external: true
